@@ -11,6 +11,7 @@ cd ..
 sudo git pull
 sudo git config core.fileMode false
 sudo docker system prune -f
+sudo mkdir -p sharpbot/data
 
 GITLOG=$(git show HEAD --name-only)
 FILE="sharpbot.Dockerfile"

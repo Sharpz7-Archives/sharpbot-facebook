@@ -17,7 +17,7 @@ Installation (Windows or Unix)
 
 Clone or download the repository.
 
-> \$ git clone https://gitlab.com/Sharpz7/messenger-bot.git
+> \$ git clone https://gitlab.com/Sharpz7/sharpbot-facebook.git
 
 Go to the /scripts directory, and make sure the script is executable.
 

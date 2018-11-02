@@ -158,7 +158,7 @@ if __name__ == '__main__':
     import cogs
 
     try:
-        with open("/data/memory.json", "x") as outfile:
+        with open("data/memory.json", "x") as outfile:
             outfile.write("""
                 {
                     "data": [
