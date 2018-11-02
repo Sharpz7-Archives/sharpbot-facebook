@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
     try:
         with open("data/memory.json", "x") as outfile:
-            outfile.write("""
+            outfile.write("""s
                 {
                     "data": [
                         {
@@ -172,7 +172,8 @@ if __name__ == '__main__':
                     "filename": "data/memory.json"
                 }
             """)
-    except FileNotFoundError:
+
+    except FileExistsError:
         pass
 
     print("\n\n\n\n")
