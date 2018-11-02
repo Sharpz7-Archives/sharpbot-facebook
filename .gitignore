@@ -1,0 +1,5 @@
+/Sharpbot/__pycache__/
+/Sharpbot/Cogs/__pycache__/
+.vscode/
+.env
+/sharpbot/data

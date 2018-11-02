@@ -1,0 +1,13 @@
+version: '3'
+services:
+  sharpbot:
+    hostname: "sharpbot"
+    image: sharpbot-facebook:latest
+    volumes:
+      - "./sharpbot:/sharpbot"
+    env_file:
+      - .env
+    build: sharpbot.Dockerfile
+
+volumes:
+  sharpbot:
