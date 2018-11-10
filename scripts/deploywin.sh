@@ -1,7 +1,7 @@
 #!/bin/bash
 
 build_image () {
-    docker build --rm -f  "sharpbot.Dockerfile" -t sharpbot-facebook:latest .
+    docker build --rm -t sharpbot-facebook:latest .
 }
 
 cd ..
@@ -11,7 +11,7 @@ docker system prune -f
 mkdir -p sharpbot/data
 
 GITLOG=$(git show HEAD --name-only)
-FILE="sharpbot.Dockerfile"
+FILE="Dockerfile"
 if [[ $GITLOG =~ $FILE ]];
 then
     build_image

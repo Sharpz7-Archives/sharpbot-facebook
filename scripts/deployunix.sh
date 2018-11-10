@@ -4,7 +4,7 @@
 # For new install
 
 build_image () {
-    sudo docker build --rm -f "sharpbot.Dockerfile" -t sharpbot-facebook:latest .
+    sudo docker build --rm -t sharpbot-facebook:latest .
 }
 
 cd ..
@@ -14,7 +14,7 @@ sudo docker system prune -f
 sudo mkdir -p sharpbot/data
 
 GITLOG=$(git show HEAD --name-only)
-FILE="sharpbot.Dockerfile"
+FILE="Dockerfile"
 if [[ $GITLOG =~ $FILE ]];
 then
     build_image
