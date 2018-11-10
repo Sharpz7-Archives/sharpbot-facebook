@@ -7,7 +7,7 @@ services:
       - "./sharpbot:/sharpbot"
     env_file:
       - .env
-    build: sharpbot.Dockerfile
+    build: Dockerfile
 
 volumes:
   sharpbot:
