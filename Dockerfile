@@ -4,8 +4,8 @@ RUN pip install pipenv
 
 COPY Pipfile Pipfile
 COPY Pipfile.lock Pipfile.lock
-RUN pipenv install
+RUN pipenv install --system
 
 WORKDIR /sharpbot
 
-CMD ["pipenv", "run", "python", "-u", "client.py"]
+CMD ["python", "-u", "client.py"]

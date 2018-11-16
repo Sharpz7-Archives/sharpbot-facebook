@@ -59,6 +59,22 @@ def box(self, x):
         + tags.default + "tictac")
 
 
+@tags.tag('game')
+def end(self):
+    """
+    End a game of tictac
+    """
+
+    for keys in players:
+        if self.author in keys:
+            players[keys].end(self.author)
+            return
+
+    self.message(
+        "You have not started a game yet, do "
+        + tags.default + "tictac")
+
+
 class tictacC():
     def __init__(self, client, player1, id1, type1, player2, id2, type2):
         self.board = self.make()
