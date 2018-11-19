@@ -118,7 +118,7 @@ class SharpBot(Client):
                 ban[data] = ''.join(args)
                 user = self.read("users")
 
-            except Exception:
+            except Exception as e:
                 if type(data) is dict:
                     ban = data
                     user = self.read("users")
