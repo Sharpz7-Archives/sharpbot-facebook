@@ -7,15 +7,12 @@ stages:
   - build
   - test
 
-before_script:
-  - apk add --update py-pip
-  - pip install docker-compose
-
 test:
   stage: test
 
   script:
-    - ls /root/.cache/
+    - apk add --update py-pip
+    - pip install pipenv
     - pipenv install --dev --system
     - python -m flake8
     - ls /root/.cache/
