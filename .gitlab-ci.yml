@@ -1,0 +1,28 @@
+image: docker:latest
+
+services:
+- docker:dind
+
+stages:
+  - build
+  - test
+
+before_script:
+  - apk add --update py-pip
+  - pip install docker-compose
+
+test:
+  stage: test
+
+  script:
+    - ls /root/.cache/
+    - pipenv install --dev --system
+    - python -m flake8
+    - ls /root/.cache/
+
+
+build-master:
+  stage: build
+
+  script:
+    - docker build --rm -f "Dockerfile" -t sharpbot-facebook:latest .
