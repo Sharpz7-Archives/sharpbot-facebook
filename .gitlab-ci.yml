@@ -15,7 +15,6 @@ test:
     - pip install pipenv
     - pipenv install --dev --system
     - python -m flake8
-    - ls /root/.cache/
 
 
 build-master:

@@ -18,7 +18,7 @@ def wiki(self, *args):
     try:
         num = int(args[-1])
         text = ' '.join(list(args)[:-1])
-    except Exception as e:
+    except Exception:
         num = 6
         text = ' '.join(list(args))
     try:
@@ -39,7 +39,7 @@ def urban(self, *args):
     try:
         num = int(args[-1])
         defs = ud.define(' '.join(list(args)[:-1]))
-    except Exception as e:
+    except Exception:
         num = 2
         defs = ud.define(' '.join(list(args)))
 

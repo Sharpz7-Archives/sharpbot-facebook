@@ -11,7 +11,7 @@ def tag(comm="command"):
     def actual_decorator(func):
         try:
             globals().get(comm, command).create(func)
-        except Exception as e:
+        except Exception:
             command.create(func)
 
         return func
@@ -23,7 +23,7 @@ def find(_type):
 
     try:
         return globals().get(_type.lower(), command).pages
-    except Exception as e:
+    except Exception:
         return command.pages
 
 

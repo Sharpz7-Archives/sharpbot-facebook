@@ -33,7 +33,7 @@ def commands(self, Type="normal", x=1):
         if Type.isdigit() is True:
             x = Type
             Type = None
-    except Exception as e:
+    except Exception:
         pass
     x = int(x) - 1
     if not isinstance(x, int):
@@ -73,7 +73,7 @@ def ban(self, *args):
     thread = string[0]
     try:
         reason = string[1]
-    except Exception as e:
+    except Exception:
         reason = "No reason given."
 
     if self.admin(self.author) is True:
@@ -359,7 +359,7 @@ class Threads():
                         final = name.name
                         allusers.append(item)
                         allusernames.append(final)
-                except Exception as e:
+                except Exception:
                     pass
 
             if test is "U":

@@ -31,9 +31,9 @@
 #
 #   @tags.tag():
 #   def threads(self):
-#		"""
-#		Get a threads list"
-#		"""
+# 		"""
+# 		Get a threads list"
+# 		"""
 #
 #       test = test_class(self.bot())      ---> self.bot() passes the client.
 #       self.message(test.threads())

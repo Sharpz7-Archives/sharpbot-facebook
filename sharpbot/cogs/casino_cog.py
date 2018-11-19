@@ -110,7 +110,7 @@ class Blackjack():
                 cards1.append(card)
                 cards2.append(card)
 
-            except Exception as e:
+            except Exception:
                 if card[0] == 'A':
                     cards1.append(1)
                     cards2.append(11)

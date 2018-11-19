@@ -6,7 +6,7 @@ import random as ran
 def bomb(self):
     """
     Don't let the bomb go off!
-    Do !bomb to continue the game, ", 
+    Do !bomb to continue the game,
     """
 
     if bombC.plus is False:
