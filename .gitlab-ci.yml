@@ -10,10 +10,9 @@ stages:
 test:
   stage: test
 
-  script:
-    - apk add --update py-pip
-    - pip install pipenv
-    - pipenv install --dev --system
+  image: sharpbot-facebook:latest
+
+  entrypoint:
     - python -m flake8
 
 
