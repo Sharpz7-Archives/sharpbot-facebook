@@ -10,4 +10,4 @@ for item in names:
 
 for item in mods:
     import_module("cogs." + item)
-    peint(f"Imported cogs.{item}")
+    print(f"Imported cogs.{item}")

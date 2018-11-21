@@ -2,7 +2,7 @@
 
 import json
 import os
-import pprint
+import sys
 
 import fbchat.models as model
 from fbchat import Client
