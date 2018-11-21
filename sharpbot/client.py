@@ -8,6 +8,7 @@ import fbchat.models as model
 from fbchat import Client
 
 import tags
+import cogs
 
 
 class SharpBot(Client):
@@ -179,11 +180,11 @@ else:
 
     print("\n\n\n\n")
     text = (
-        "                    SHARPBOT                     \n\n"
-        "                 Version : 0.2.0                 \n\n"
-        "* * * * * * * * * * * * * * * * * * * * * * * * *\n\n"
-        "Plugins:                                         \n\n"
-        "{}                                                 \n"
+        f"                    SHARPBOT                     \n\n"
+        f"                 Version : 0.2.0                 \n\n"
+        f"* * * * * * * * * * * * * * * * * * * * * * * * *\n\n"
+        f"Plugins:                                         \n\n"
+        f"{cogs.mods}                                        \n"
     )
 
     print("Loading.....")

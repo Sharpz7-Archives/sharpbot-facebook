@@ -4,7 +4,7 @@ RUN pip install pipenv
 
 COPY Pipfile Pipfile
 COPY Pipfile.lock Pipfile.lock
-RUN pipenv install --dev --system
+RUN pipenv install --system
 
 WORKDIR /sharpbot
 
