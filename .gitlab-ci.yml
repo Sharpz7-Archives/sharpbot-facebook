@@ -4,21 +4,51 @@ services:
 stages:
   - lint
   - build
+  - deploy
 
 lint:
   stage: lint
 
   image: python:3.6.6-alpine3.8
 
+  # Uses flake8 to check code. If this fails build and deploy don't run.
   script:
-    - pip install pipenv
-    - pipenv install --dev --system
+    - pip install flake8
     - python -m flake8
 
-build-master:
+build:
   stage: build
 
   image: docker:latest
 
+  # Build's and saves the docker image.
   script:
     - docker build --rm -f "Dockerfile" -t sharpbot-facebook:latest .
+    - mkdir image
+    - docker save sharpbot-facebook:latest > image/sharpbot-facebook.tar
+
+  # Makes sure the image is available in next stage.
+  artifacts:
+    paths:
+      - image
+
+deploy:
+  stage: deploy
+
+  image: docker:latest
+
+  # Tests python imports and code. Makes sure bot doesn't run.
+  before_script:
+    - docker load -i image/sharpbot-facebook.tar
+    - apk add --update py-pip
+    - pip install docker-compose
+    - touch .env
+    - echo "GITLAB=DEPLOY" > .env
+
+  variables:
+    GITLAB: "DEPLOY"
+
+  # Makes sure docker-compose closes if one container exits.
+  script:
+    - docker-compose up --abort-on-container-exit
+

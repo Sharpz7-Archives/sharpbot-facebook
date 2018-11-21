@@ -154,9 +154,10 @@ class SharpBot(Client):
     """You can check if your cog works by writing it here first."""
 
 
-if __name__ == '__main__':
-    import cogs
+if os.environ["GITLAB"] == "DEPLOY":
+    sys.exit()
 
+else:
     try:
         with open("data/memory.json", "x") as outfile:
             outfile.write("""s
@@ -185,10 +186,6 @@ if __name__ == '__main__':
         "{}                                                 \n"
     )
 
-    mods = pprint.pformat(cogs.mods)
-    mods = mods.translate(str.maketrans("'", '*', " ,[]"))
-
-    print(text.format(mods))
     print("Loading.....")
 
     client = SharpBot(
