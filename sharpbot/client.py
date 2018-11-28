@@ -155,7 +155,7 @@ class SharpBot(Client):
     """You can check if your cog works by writing it here first."""
 
 
-if "GITLAB" in os.environ :
+if "GITLAB" in os.environ:
     sys.exit()
 
 else:
