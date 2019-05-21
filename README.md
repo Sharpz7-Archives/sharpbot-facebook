@@ -1,11 +1,11 @@
 Sharpbot: Facebook Chat (Messenger) bot for Python 3.
 ============================================
 
+**This project is no longer supported, but feel free to look at it if you want!**
+
 Facebook Messenger Bot ([Messenger](https://www.facebook.com/messages/))
 for Python. This project was created using the
 [Fbchat-module](https://github.com/carpedm20/fbchat).
-
-**Make sure you have a account setup for the bot to use**
 
 Required
 ============
