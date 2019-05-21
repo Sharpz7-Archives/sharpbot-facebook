@@ -9,6 +9,7 @@ flake8 = "*"
 [packages]
 fbchat = "*"
 wikipedia = "*"
+urllib3 = ">=1.24.2"
 urbandictionary = "*"
 fuzzywuzzy = "*"
 
